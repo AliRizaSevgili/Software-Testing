@@ -1,0 +1,76 @@
+   --------------------------------------------
+   Student Name         : Ali Riza Sevgili
+   Student Number	: 135200228
+   Student Email	: arsevgili@myseneca.ca
+   Date			: 10/02/2023
+   Subject		: SFT221NCC
+   --------------------------------------------
+
+
+1.  What was the most useful technique you used to find the bugs? Why was it more useful than
+other techniques you tried?
+
+At first, when I was testing the code, I would say that testing was the most helpful technique because, at least for me, I like to run the code again to check for any syntax errors and to make sure that everything prints out as I want it to before continuing. Once I identify the issues, I simply begin to reverse engineer it by making minor adjustments, such as changing the lf to d because no doubles needed to be returned, testing a function that I initially believed needed to be in the project, only to discover it did nothing and waste my time; I then simply removed it, and the issues were resolved.
+
+2. Look up answers to the following questions and report your findings:
+
+a-What are the largest integer and double values you can store?
+The highest number of integers that may be stored is 2147483647.
+The biggest double that can be stored is: 1.79769e+308 huge.
+These, however, are generally applicable to IEEE 754 and 32-bit operating systems. On 64-bit computers, the long long type's maximum integer value is 9223372036854775807.
+
+b-Why is there a limit on the maximum value you can store in a variable?
+It would be useless to utilise more bits than necessary to cover the range of a variable, wasting ram, indicating that variables have a limit. We cannot have variables with no limits since the programme would crash and the machine would freeze, especially when it comes to memory management later on.
+
+c-If you exceed the maximum value an integer can hold, what happens? Explain why the format causes this to happen.
+An extra digit will be omitted from the output if you go beyond the maximum value that an integer may carry due to the value exceeding the allocated memory. This is known as an overflow error. 
+This is formatted in such a way that the programmes can operate smoothly with the appropriate amount of resources while no superfluous memory is being consumed.
+
+
+d-What is the format for the storage of a floating point variable? How does this differ from the way an integer is stored?
+	
+One bit for the sign, eight bits for the exponent component, and twenty-three bits for the significant part make up the format for storing float-point variables, which occupy four bytes of storage.
+An integer, on the other hand, may store whole numbers with precisions of 9 to 10.
+The differences between floating-point numbers and integer numbers:
+-Floating numbers represent the larger size of values which contain fractions, but integers 
+just have whole numbers.
+-Floating can be stored with sign, exponent, and significand, but integer numbers can be stored by binary numbers
+-Integer values have certain precision, but floating numbers could be different, so sometimes it causes some small rounding issues.
+
+3. What is the default amount of stack memory that is given to a program when Visual Studio
+starts a C or C++ program? What is the default heap size? Did you hit any of the limits? If so, which one(s)? If you hit a limit, would increasing the amount of memory allocated to the program fix the problem? Justify your answer. Why do they limit the stack and heap size for a program?
+
+When Visual Studio launches a C or C++ programme, the default stack memory size is 1MB, which is also the default heap size. This time, as I was debugging the code, I did not encounter any constraints. In order for a programme to succeed, it must not only carry out its intended function but also operate as efficiently and quickly as possible. For this reason, stack and heap sizes are limited for each programme. Since code may be saved in a relatively tiny number of bits compared to the amount of RAM it uses when operating, RAM is the primary resource that programmes need.
+
+Logs for debugging:
+
+1. Ran tests on the code to identify any potential issues.
+ 
+2. Changed the factorial function's syntax a little, adding if conditions in case a character received a negative value from the user, and added a testNum variable to the main to ensure that it prints correctly.
+
+3. Because, like the factorial function, there was an issue with the parameters being returned, a variable was introduced to the reduced factorial function. 
+
+4. There appears to be a mistake because it has eliminated the printf portion of the factorial function, which was displaying a double because the printf statement had a lf rather than a d.
+
+5. It is now outputting only 1s, however, it was able be fixed by using the arrow pointer to access members of the structure
+
+6. Printing has begun:
+    1            1
+    2            1
+    3            1
+    4          120
+    5    862453760
+    6            0
+	 
+
+7. Current output:
+   0            1
+   1            1
+   2            2
+   3          720
+   4   -775946240
+   5            0
+
+
+The reduced factorial function couldn't be fixed, so I'm going to remove it and see if it helps. The decreased factorial function was unnecessary and ultimately the issue.
+
